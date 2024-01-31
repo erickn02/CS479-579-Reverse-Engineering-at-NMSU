@@ -2,11 +2,13 @@
 
 Welcome to this repository dedicated to gathering reports on the reverse engineering of malware samples, based on the content of the book "Practical Malware Analysis." Within this collection, you will find various reports from malware analysis as the semester of spring 2024 progresses in the Class of Reverse Engineering at NMSU.
 
-My goal for these reports is for them to serve as a landscape of what has been done not only in the class but also as the learning curve in this field of study.
+The goal of these reports is to serve as a landscape of what has been done not only in the class but also as the learning curve in this field of study.
 
 ## System Setup
 
 Setting up your reverse engineering system is not an easy task, there are several factors and procedures to be done in order to have a functional system to work with.
+
+For this setup, a Windows-based computer is used, but in order to work without any risk of malware leakage we are going to install a dual boot with the Linux system, more specifically Debian. Once this is done we will be working from the Linux boot and only then we can install a Windows virtual machine and get all our tools, IDEs, and test subjects to prepare for malware analysis. It must be mentioned that there are different ways of getting your dual boot to work, one of the easier ones is creating a partition in your drive for the new system, but we are going to be using and implementing an external SSD drive as our booting drive, this way it will only boot in Linux when that external hard drive is physically connected to the computer.
 
 ### System Isolation and System Network
 
