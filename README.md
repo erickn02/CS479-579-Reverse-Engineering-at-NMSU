@@ -17,3 +17,7 @@ Another precaution we are taking is the System network isolation, with this prec
 ### Windows Defender
 
 To disable Windows Defender for this part of the assignment we need to first boot in the minimal safe mode to make changes, this is due to the great implementation of Windows Defender and its capabilities of persistence upon unwanted disable. After that is done you need to enter a few registry edits to make sure Windows Defender doesn't start new services. After that, we have to boot into normal mode and disable a few tasks that make Windows Defender work. This is to ensure everything will be blocked from starting Windows Defender. We must check Windows Defender to ensure that our changes had their effect.
+
+### Tools For Analysis
+
+***   Progress as the semester goes...    ***
