@@ -21,7 +21,7 @@ den:
 
 
 # Explanation
-Overall explanation here
+Overall explanation
 
 > This code loads the address of the address "/bin/sh" string into %rdi,
 > sets both %rsi and %rdx to zero, sets %al to 0x3b or 59 in decimal(the
