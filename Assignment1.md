@@ -75,4 +75,7 @@ On this instruction we are using a label we created, the next directive defines 
 ## Size
 > The size of this code is 25 bytes in total, I must mention that it can still be programmed into a lighter version.
 
-> The ASCII bytes are here... ==   ==
+> The ASCII bytes are here...
+```assembly
+            48 8d 3d 0a 00 00 00 48 31 f6 48 31 d2 b0 3b 0f 05 2f 62 69 6e 2f 73 68 00
+```
