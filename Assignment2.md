@@ -44,9 +44,10 @@ Consequently, there's no requirement for port openings, VPN connections, or wire
 
 ###  Clues about Origin
 
-Is it similar to other malware from a specific threat actor?
-Does it have filenames or strings that are similar to other malware?
-Where was it found?
-What is the C2 (command and control) infrastructure
-
 One clue about the origin is that this file was created in April 2019, this might be the creation of the file or the modification for analysis.
+
+The command and control structure is...
+
+This malware was found...
+
+This malware is similar to some specific malware threat actor...
