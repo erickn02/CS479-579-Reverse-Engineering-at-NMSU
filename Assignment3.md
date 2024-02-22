@@ -75,8 +75,8 @@ To put it another way, it clears the rax register's contents.
 # Crack me
 
 ## SCREENSHOTS 
+![Screenshot from 2024-02-21 21-08-09](https://github.com/erickn02/CS479-579-Reverse-Engineering-at-NMSU/assets/111537523/6d40ac9f-ddaf-4915-a38f-d45c8db39558)
 
-file:///home/erick/Pictures/Screenshots/Screenshot%20from%202024-02-21%2021-08-09.png
 ## How you solved it, and what the solution was.
 >  I started this Crack Me by creating a Ghidra project and loading the Crack Me into it, once that was done I proceeded with decompiling it to start the analysis, since Ghidra assumes a lot of the code I had to change a few of the names to help myself keep track of what was doing what.Once I identified the function that validates the key I compared it with examples that I have seen in forums while researching the topic and realized some variable types were wrong and that it had some inconsistencies, but ultimately   I recognized that the key could work with either decimals or hex as long as the result of modulo was zero. The correct key should be 1223.
     
