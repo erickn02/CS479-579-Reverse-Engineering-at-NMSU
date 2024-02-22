@@ -74,8 +74,10 @@ To put it another way, it clears the rax register's contents.
 ---
 # Crack me
 
-## Screenshots or crack me go here
+## SCREENSHOTS WILL GO HERE 
 
 ## How you solved it, and what the solution was.
-
+>  I started this Crack Me by creating a Ghidra project and loading the Crack Me into it, once that was done I proceeded with decompiling it to start the analysis, since Ghidra assumes a lot of the code I had to change a few of the names to help myself keep track of what was doing what.Once I identified the function that validates the key I compared it with examples that I have seen in forums while researching the topic and realized some variable types were wrong and that it had some inconsistencies, but ultimately   I recognized that the key could work with either decimals or hex as long as the result of modulo was zero. The correct key should be 1223.
+    
 ## Whether Ghidra or IDA was more helpful to you, and why.
+>  I preferably feel more confident with Ghidra, to me it seems easier to use and the interface makes me see things better. I also like the fact that it gave me less trouble for this crack me and from an unexperienced Ghidra user I would say that it comes on top of IDA even though both are very similar but also very unique in their own way, I feel like the complexity in user-friendly interfaces is huge for me at least, it must be mentioned that both get the job done but I prefer Ghidra because it allows me to learn a bit more even though I am still fairly new to all these tools and topics, the animations in Ghidra are cool too.
