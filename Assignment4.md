@@ -1,17 +1,45 @@
-#ezcrackme1.zip
+# ezcrackme1.zip
 
-##KeyGen
+## KeyGen
 ```python
-when i =1 do 
+KEYGEN GOES HERE
 ```
+a
+b
+c
+# ezcrackme2.zip
 
-#ezcrackme2.zip
+## KeyGen
+```python
+KEYGEN GOES HERE
+```
+a
+b
+c
+# ezcrackme3.zip
 
+## KeyGen
+```python
+KEYGEN GOES HERE
+```
+a
+b
+c
+# controlflow1-1.zip
 
-#ezcrackme3.zip
+## KeyGen
+```python
+KEYGEN GOES HERE
+```
+a
+b
+c
+# controlflow2-1.zip
 
-
-#controlflow1-1.zip
-
-
-#controlflow2-1.zip
+## KeyGen
+```python
+KEYGEN GOES HERE
+```
+a
+b
+c
