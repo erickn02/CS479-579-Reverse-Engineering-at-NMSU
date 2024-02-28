@@ -52,7 +52,12 @@ key = "strawberrykiwi"
 print(key)
 ```
 
-> For the third CrackMe I tried using the same method of first analysing the Assembly and programming code provided by Ghidra...
+> For the third CrackMe I tried using the same method of first analysing the Assembly and programming code provided by Ghidra, by doing this I found the string ```strawberry``` , which I tried by itself manually but it did not work. After that I had to use the Source and Sink method, by doing so I followed the path from the Sink to the Source, but I was lucky to realize midway that the password was partitioned into two variables, ```FIRST_PASSWORD1``` and ```FIRST_PASSWORD2``` . When I analized this I came to the conclusion that I was missing a part of the password, so it either had to be " item + strawberry" or "strawberry + item". Once I looked where to find the missing string I found the address and I hover the mouse on top of it, then it created a quick pop-up that told me the answer and the corresponding part of it, just like shown in the following two pictures. After that I just put the password together and hardcoded it into the KeyGen.
+
+![Screenshot from 2024-02-28 14-43-33](https://github.com/erickn02/CS479-579-Reverse-Engineering-at-NMSU/assets/111537523/a28e1ae4-890d-4ac3-81eb-b8d90d0160aa)
+
+
+
 ---
 ---
 ---
