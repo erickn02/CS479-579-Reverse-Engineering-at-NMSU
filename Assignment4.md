@@ -32,7 +32,7 @@ import string
 key = "artificialtree"
 print(key)
 ```
-> For the second CrackMe I followed the same process, before trying any Source and Sink I conduct a preliminary analysis of the Assembly and programming code provided by Ghidra. After some scrolling in the code I encountered this string of the password that I tried manually and succesfully worked. Then I hardcoded it into the KeyGen and properly executed it.
+> For the second CrackMe I followed the same process, before trying any Source and Sink I conduct a preliminary analysis of the Assembly and programming code provided by Ghidra. After some scrolling in the code I encountered this string of the password that I tried manually and succesfully worked.It seemed to be stored in RSI too. Then I hardcoded it into the KeyGen and properly executed it.
 
 ![Screenshot from 2024-02-28 14-26-28](https://github.com/erickn02/CS479-579-Reverse-Engineering-at-NMSU/assets/111537523/c632c58e-8f5a-422d-b228-8c9fa165e25c)
 
