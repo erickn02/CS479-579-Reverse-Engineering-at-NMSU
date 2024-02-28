@@ -44,9 +44,15 @@ print(key)
 
 ## KeyGen3
 ```python
-KEYGEN GOES HERE
+#!/usr/bin/env python3
+
+import random
+import string
+key = "strawberrykiwi"
+print(key)
 ```
-> SUMMARY GOES HERE
+
+> For the third CrackMe I tried using the same method of first analysing the Assembly and programming code provided by Ghidra...
 ---
 ---
 ---
