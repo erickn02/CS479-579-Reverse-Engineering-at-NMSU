@@ -80,9 +80,9 @@ def key_gen():
 
 print(key_gen())
 ```
-> For the first Control Flow we have to discover its parameters, just like we saw in class this Control Flow needs the following...
+> For the first Control Flow we have to discover its parameters, we achieve this by practicing Source and Sink method, just like we saw in class this Control Flow needs the following...
 > * A key with a lenght of 16 characters.
-> * A key that has fixed the following positions [ A , 6 , ~ , 2 , ~ , ~ , ~ , % , ~ , ~ , ~ , ~ , ~ , ~ , ~ , * ]
+> * A key that has fixed the following positions [ A , 6 , ~ , 2 , ~ , ~ , ~ , % , ~ , ~ , ~ , ~ , ~ , ~ , ~ , * ] 
 > * Empty spots to randomize are represented as "~".
 
 ![Screenshot from 2024-02-28 17-28-42](https://github.com/erickn02/CS479-579-Reverse-Engineering-at-NMSU/assets/111537523/03fbc19a-e17f-487e-8131-cfd84e1502c9)
@@ -99,5 +99,8 @@ print(key_gen())
 ```python
 KEYGEN GOES HERE
 ```
-> SUMMARY GOES HERE
+> For the second Control Flow we have to discover its parameters, we achieve this by practicing Source and Sink method, just like we saw in class this Control Flow needs the following...
+> * A key with a lenght of 16 characters.
+> * A key that has fixed the following positions [ ~ , ~ , ~ , ~ , ~ , ~ , 'Y' , ~ , '#' , ~ , 'A' , '*' , ~ , '6' , ~ , ~ ]
+> * Empty spots to randomize are represented as "~".
 
