@@ -66,7 +66,19 @@ print(key)
 
 ## KeyGen4
 ```python
-KEYGEN GOES HERE
+#!/usr/bin/env python3
+
+import random
+import string
+
+def key_gen():
+  fixed_chars = ['A', '6', None, '2', None, None, None, '%', None, None, None, None, None, None, None, '*']
+  random_chars = [random.choice(string.ascii_letters + string.digits + string.punctuation) if char is None else char for char in fixed_chars]
+  password = ''.join(random_chars)
+
+  return password
+
+print(key_gen())
 ```
 > For the first Control Flow we have to discover its parameters, just like we saw in class this Control Flow needs the following...
 > * A key with a lenght of 16 characters.
