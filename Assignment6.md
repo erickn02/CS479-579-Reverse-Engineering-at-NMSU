@@ -22,7 +22,68 @@ My solution is...
 ```python
 #!/usr/bin/env python3
 
-print("This is the answer!")
+import random
+import string
+
+def generate_serial():
+    def generate_character(condition):
+        while True:
+            char = random.choice(string.ascii_letters + string.digits)
+            if condition(char):
+                return char
+
+    def condition_11_9(char_11, char_9):
+        var1 = ord(char_11) ^ ord(char_9)
+        return 0 <= var1 < 10
+
+    def condition_14_6(char_14, char_6):
+        var2 = ord(char_14) ^ ord(char_6)
+        return 0 <= var2 < 10
+
+    def condition_2_3_17_18(char_2, char_3, char_17, char_18):
+        return (ord(char_3) + ord(char_2) >= 171) and \
+               (ord(char_17) + ord(char_18) >= 171) and \
+               ((ord(char_3) + ord(char_2)) != (ord(char_17) + ord(char_18)))
+
+    char_11 = generate_character(lambda char: char.isdigit() or char.isalpha())
+    char_9 = generate_character(lambda char: char.isdigit() or char.isalpha())
+    var1 = ord(char_11) ^ ord(char_9)
+
+    char_14 = generate_character(lambda char: char.isdigit() or char.isalpha())
+    char_6 = generate_character(lambda char: char.isdigit() or char.isalpha())
+    var2 = ord(char_14) ^ ord(char_6)
+
+    char_1 = chr(var2 + 48)
+    char_4 = chr(var1 + 48)
+    char_16 = chr(var1 + 48)
+    char_19 = chr(var2 + 48)
+
+    char_3 = generate_character(lambda char: char.isdigit() or char.isalpha())
+    char_2 = generate_character(lambda char: char.isdigit() or char.isalpha())
+    char_17 = generate_character(lambda char: char.isdigit() or char.isalpha())
+    char_18 = generate_character(lambda char: char.isdigit() or char.isalpha())
+
+    while not condition_2_3_17_18(char_2, char_3, char_17, char_18):
+        char_3 = generate_character(lambda char: char.isdigit() or char.isalpha())
+        char_2 = generate_character(lambda char: char.isdigit() or char.isalpha())
+        char_17 = generate_character(lambda char: char.isdigit() or char.isalpha())
+        char_18 = generate_character(lambda char: char.isdigit() or char.isalpha())
+
+    char_5 = '-'
+    char_7 = generate_character(lambda char: char.isdigit() or char.isalpha())
+    char_8 = generate_character(lambda char: char.isdigit() or char.isalpha())
+    char_10 = '-'
+    char_12 = generate_character(lambda char: char.isdigit() or char.isalpha())
+    char_13 = generate_character(lambda char: char.isdigit() or char.isalpha())
+    char_15 = '-'
+
+    serial = ''.join([char_1, char_2, char_3, char_4, char_5, char_6, char_7, char_8, char_9, char_10,
+                      char_11, char_12, char_13, char_14, char_15, char_16, char_17, char_18, char_19])
+
+    return serial
+
+print(generate_serial())
+
 ```
 ## How I did it using Ghidra...
 
