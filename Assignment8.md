@@ -23,9 +23,24 @@ Once installed on a target system, the malware is designed to allow the attacker
 
 * [CheckPoint Source](https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-malware/what-is-njrat-malware/)
 
-# RegShot
+  This is also an activity statistic done by Gridinsoft...
+  ![njrat_activityStats](https://github.com/erickn02/CS479-579-Reverse-Engineering-at-NMSU/assets/111537523/95e09d2d-61d6-4606-8902-8175cfed4499)
+* [Gridinsoft Source](https://gridinsoft.com/backdoor/njrat)
 
+# RegShot
+There were a lot of registries changed and a few things that were added and deleted, some of these give NjRAT permissions that allow it to be persistent according to my assumption of these keys changed.
+
+>> HKLM\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\FirewallRules\{E675A880-8829-4D38-8B13-2215124449B8}
+
+I assume it gives itself permission to get past the firewall for an indefinite time.
+I couldn't find more that were precise, the rest have multiple keys changed but I can't pinpoint what they do. They all look very similar.
+
+I do understand that the firewall can help the RAT either get past it or at least not be detected, but I feel like a good way to detect this RAT in your computer can be if the keys have increased, decreased, or changed, this can be easily detected since windows keep a record of when was the last update to the keys in case they did change but were not replaced.
+
+There are also files that could get created and if spotted then you can realize that they were not created or downloaded by you, I must say this only works if you are a person that keeps their computer in check, but a good antivirus can help detect this files for you and ask if you were involved in their creation.
 
 # FakeNet
+During class, we noticed that after running FakeNet NjRAT tried to make a DNS connection to the domain ```zaaptoo.zapto.org```, sadly after looking at the rest of the activity I couldn't get any more suspicious activity besides possible reconnection trials to the same page.
 
+After some digging, it seemed to be a legitimate service of a remote access dynamic DNS, but with the twist of it being used for this Remote Access Trojan.
 
