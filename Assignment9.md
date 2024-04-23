@@ -24,3 +24,5 @@ After that, the program proceeded to find and remove files upon button interacti
 
 https://github.com/erickn02/CS479-579-Reverse-Engineering-at-NMSU/assets/111537523/4dda752d-ecbc-4002-8ecd-d4cd2b8ee8f7
 
+- [Nj_Remover.exe](https://github.com//erickn02/CS479-579-Reverse-Engineering-at-NMSU/edit/main/a9_file/Nj_Remover.exe)
+- [Nj_Remover.py](https://github.com//erickn02/CS479-579-Reverse-Engineering-at-NMSU/blob/main/a9_file/Nj_Remover.py)
