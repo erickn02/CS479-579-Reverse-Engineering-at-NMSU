@@ -87,6 +87,5 @@ exit()
 In order to crash the victim program we had to...
 
 #### Screenshot
-![Screenshot from 2024-05-03 12-20-21](https://github.com/erickn02/CS479-579-Reverse-Engineering-at-NMSU/assets/111537523/bee9e809-b836-4ec0-a301-0f69fec5ddac)
-
+![Screenshot from 2024-05-03 13-37-37](https://github.com/erickn02/CS479-579-Reverse-Engineering-at-NMSU/assets/111537523/478e08f7-9423-456a-a8a4-2c8c0ee43e02)
 
