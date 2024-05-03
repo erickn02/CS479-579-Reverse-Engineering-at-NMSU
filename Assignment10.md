@@ -5,7 +5,7 @@ Before we started this assignment we had to do some preliminary tasks to get sta
 
 * Install pwntools.
 * Download the victim program "pizza".
-* Attempt to run and crash the program successfully or get the "segmentation fault".
+* Attempt to run and crash the program successfully or in other words get the "segmentation fault".
 * Open the victim program and analyze it in Ghidra.
 
 Then we can start to write a Python transcript from the sample in order to crash the code and analyze the core dump.
@@ -84,7 +84,9 @@ exit()
 ```
 
 ### Explanation and Screenshots
-In order to crash the victim program we had to...
+In order to crash the victim program we had to to figure out some vulnerabilities of the code, basically breaking the code as a user of it. Once we have figured out how to create a segmentation fault then we can come up with a way to inject to the victim program our code and start figuring out how to find the right offset so we can take over our victim program.
+
+The way the offset is calculated is that you have to find the return address in order to call our shellcode, once thats set then recognize the overwrite address to properly open the shellcode terminal and successfully take control of that. Even though a helping function to print the stack is not necessary it does make life easier and speeds up the process of finding the right place to overwrite the address. Also, feeding the program with two inputs is crucial, using either an excessive amount of the same character ``` TTTTTTTTTTT...TTTTT ``` or what we used ```%P``` you can get what's going to cause that program control.
 
 #### Screenshot
 ![Screenshot from 2024-05-03 13-37-37](https://github.com/erickn02/CS479-579-Reverse-Engineering-at-NMSU/assets/111537523/478e08f7-9423-456a-a8a4-2c8c0ee43e02)
